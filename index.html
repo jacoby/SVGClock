@@ -4,29 +4,32 @@
 <head>
   <meta charset="utf-8" />
   <title>Clock</title>
-  <!-- <link href="./style.css" rel="stylesheet" />
-  <link href="./circles.css" rel="stylesheet" /> -->
   <style>
+    * {
+      margin:0;
+      padding:0;
+    }
     body {
       font-family: Arial, Helvetica, sans-serif;
       text-align: center;
       background-color: #222;
       color: #999;
+      overflow: hidden;
     }
 
     svg {
       background-color: #222;
-      max-height: 90vh;
-      max-width: 90vw;
-      border: 2px solid #666;
+      max-height: 98vh;
+      max-width: 98vw;
     }
 
     .loop {
       stroke: #666;
-      stroke-width: 40;
+      stroke-width: 20;
       fill-opacity: 0;
     }
 
+    #cen,
     #day,
     #hor,
     #min,
@@ -35,38 +38,40 @@
       stroke-width: 10;
     }
 
+    #cen {
+      fill: lightblue
+    }
+
     #day {
-      fill: red
+      fill: yellowgreen
     }
 
     #hor {
-      fill: orange
-    }
-
-    #min {
       fill: yellow
     }
 
+    #min {
+      fill: orange
+    }
+
     #sec {
-      fill: yellowgreen
+      fill: red
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Loops</h1>
-  </header>
   <svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg" id="neck">
     <circle class="loop" id="d_loop" r="100" cx="450" cy="450" />
     <circle class="loop" id="h_loop" r="200" cx="450" cy="450" />
     <circle class="loop" id="m_loop" r="300" cx="450" cy="450" />
     <circle class="loop" id="s_loop" r="400" cx="450" cy="450" />
 
-    <circle class="dot" id="sec" r="30" cx="0" cy="0" />
-    <circle class="dot" id="min" r="30" cx="0" cy="0" />
-    <circle class="dot" id="hor" r="30" cx="0" cy="0" />
-    <circle class="dot" id="day" r="30" cx="0" cy="0" />
+    <circle class="dot" id="sec" r="30" cx="450" cy="450" />
+    <circle class="dot" id="min" r="30" cx="450" cy="450" />
+    <circle class="dot" id="hor" r="30" cx="450" cy="450" />
+    <circle class="dot" id="day" r="30" cx="450" cy="450" />
+    <circle class="dot" id="cen" r="30" cx="450" cy="450" />
 
   </svg>
   <!-- <script src="./circles.js"></script> -->
