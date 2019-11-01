@@ -100,7 +100,7 @@
       let deg = seconds * 6;
       let deg2 = (deg - 90) % 360;
       let sec = document.getElementById("sec");
-      let xy = circleCoords(400, deg2);
+      let xy = circleCoords(100, deg2);
       let x = 450 + xy.x;
       let y = 450 + xy.y;
       sec.setAttribute("cx", x);
@@ -112,7 +112,7 @@
       let deg = minutes * 6;
       let deg2 = (deg - 90) % 360;
       let min = document.getElementById("min");
-      let xy = circleCoords(300, deg2);
+      let xy = circleCoords(200, deg2);
       let x = 450 + xy.x;
       let y = 450 + xy.y;
       min.setAttribute("cx", x);
@@ -124,7 +124,7 @@
       let deg = hours * 15;
       let deg2 = (deg - 90) % 360;
       let hor = document.getElementById("hor");
-      let xy = circleCoords(200, deg2);
+      let xy = circleCoords(300, deg2);
       let x = 450 + xy.x;
       let y = 450 + xy.y;
       hor.setAttribute("cx", x);
@@ -136,7 +136,7 @@
       let deg = days * 51.42;
       let deg2 = (deg + 270) % 360;
       let day = document.getElementById("day");
-      let xy = circleCoords(100, deg2);
+      let xy = circleCoords(400, deg2);
       let x = 450 + xy.x;
       let y = 450 + xy.y;
       day.setAttribute("cx", x);
