@@ -161,15 +161,15 @@
       }
 
       function draw_year(year) {
-        console.log((year * 360) / 366);
         let deg = (year * 360) / 366;
+        let deg2 = deg - 90;
         let elem = document.getElementById("yer");
-        let xy = circleCoords(410, deg);
+        let xy = circleCoords(410, deg2);
         let x = 450 + xy.x;
         let y = 450 + xy.y;
         elem.setAttribute("cx", x);
         elem.setAttribute("cy", y);
-        // console.log("Year", deg, x, y);
+        // console.log("Year", deg, deg2, x, y);
       }
 
       function circleCoords(radius, degFromTop) {
