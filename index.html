@@ -95,7 +95,7 @@
         let mm = m + ss / 60;
         let hh = h + mm / 60;
         let dd = d + hh / 24;
-        let yy = y;
+        let yy = y + hh / 24;
 
         ss = ss.toPrecision(4);
         mm = mm.toPrecision(4);
