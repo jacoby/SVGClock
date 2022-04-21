@@ -112,71 +112,67 @@
         requestAnimationFrame(draw);
       }
 
+      function get_attributes(angle, radius, cx, cy) {
+        let xy = circleCoords(radius, angle);
+        xy.x += cx;
+        xy.y += cy;
+        return xy;
+      }
+
       function draw_second(seconds) {
         let deg = seconds * 6;
-        let deg2 = (deg - 90) % 360;
+        let deg2 = deg % 360;
         let sec = document.getElementById("sec");
-        let xy = circleCoords(100, deg2);
-        let x = 450 + xy.x;
-        let y = 450 + xy.y;
-        sec.setAttribute("cx", x);
-        sec.setAttribute("cy", y);
+        let xy = get_attributes(deg2, 100, 450, 450);
+        sec.setAttribute("cx", xy.x);
+        sec.setAttribute("cy", xy.y);
         // console.log('Sec', seconds, deg, deg2);
       }
 
       function draw_minute(minutes) {
         let deg = minutes * 6;
-        let deg2 = (deg - 90) % 360;
+        let deg2 = deg % 360;
         let min = document.getElementById("min");
-        let xy = circleCoords(170, deg2);
-        let x = 450 + xy.x;
-        let y = 450 + xy.y;
-        min.setAttribute("cx", x);
-        min.setAttribute("cy", y);
+        let xy = get_attributes(deg2, 170, 450, 450);
+        min.setAttribute("cx", xy.x);
+        min.setAttribute("cy", xy.y);
         // console.log('Min', minutes, deg, deg2);
       }
 
       function draw_hour(hours) {
         let deg = hours * 15;
-        let deg2 = (deg - 90) % 360;
+        let deg2 = deg % 360;
         let hor = document.getElementById("hor");
-        let xy = circleCoords(250, deg2);
-        let x = 450 + xy.x;
-        let y = 450 + xy.y;
-        hor.setAttribute("cx", x);
-        hor.setAttribute("cy", y);
+        let xy = get_attributes(deg2, 250, 450, 450);
+        hor.setAttribute("cx", xy.x);
+        hor.setAttribute("cy", xy.y);
         // console.log('Hour', hours, deg, deg2);
       }
 
       function draw_day(days) {
         let deg = days * 51.42;
-        let deg2 = (deg + 270) % 360;
+        let deg2 = deg % 360;
         let day = document.getElementById("day");
-        let xy = circleCoords(330, deg2);
-        let x = 450 + xy.x;
-        let y = 450 + xy.y;
-        day.setAttribute("cx", x);
-        day.setAttribute("cy", y);
+        let xy = get_attributes(deg2, 330, 450, 450);
+        day.setAttribute("cx", xy.x);
+        day.setAttribute("cy", xy.y);
         // console.log('Day', deg, deg2, x, y, );
       }
 
       function draw_year(year) {
         let deg = (year * 360) / 366;
-        let deg2 = deg - 90;
-        let elem = document.getElementById("yer");
-        let xy = circleCoords(410, deg2);
-        let x = 450 + xy.x;
-        let y = 450 + xy.y;
-        elem.setAttribute("cx", x);
-        elem.setAttribute("cy", y);
+        let yer = document.getElementById("yer");
+        let xy = get_attributes(deg, 410, 450, 450);
+        yer.setAttribute("cx", xy.x);
+        yer.setAttribute("cy", xy.y);
         // console.log("Year", deg, deg2, x, y);
       }
 
       function circleCoords(radius, degFromTop) {
         const rads = degToRad(degFromTop);
         return {
-          x: radius * Math.cos(rads),
-          y: radius * Math.sin(rads),
+          x: radius * Math.sin(rads),
+          y: -1 * radius * Math.cos(rads),
         };
       }
 
